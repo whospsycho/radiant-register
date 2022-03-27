@@ -1,12 +1,13 @@
-import { Text, Space, Center, Group, TextInput, PasswordInput, Button, Container } from '@mantine/core'
+import { Text, Space, Center, Group, TextInput, PasswordInput, Button, Container, NativeSelect } from '@mantine/core'
 import { useModals } from '@mantine/modals';
 import { useNotifications } from '@mantine/notifications';
-import { X, Check, Mail, Key, User, Tag } from 'tabler-icons-react'
+import { X, Check, Mail, Key, User, Tag, At } from 'tabler-icons-react'
 import register from '../auth/register'
 
 
 
 export default function registerPage() {
+  const domains = ["@radiant.cool", "@shiba.bar", "@floppa.email", "@catgirls.work", "@otters.shop", "@webmail.surf", "@skeeet.cc", "@catgirls.digital", "@bigfloppa.monster", "@lean.monster ", "@cope.wtf", "@hypixel.pro", "@my-balls-it.ch", "@allah.agency", "@thighs.media", "@monke.party", "@femboy.media", "@floppa-is.art", "@floppa.company", "@floppa.digital", "@fortnite.bar", "@fakenitro.store", "@crisium.one", "@shibeclub.tech", "@shibe-in.space", "@lunarclient.site", "@cock.red", "@indianscammer.email", "@badlionclient.info", "@fart.host", "@grabify.website", "@scamming.email", "@femboys.email", "@rapist.email", "@ching-chong-wing.wang", "@e-z.email"]
   const modals = useModals();
   const notifications = useNotifications();
   const openRegisterModal = () => {
@@ -66,15 +67,33 @@ export default function registerPage() {
             }}>
 
             <Space h={16} />
-            <TextInput
-              icon={<Mail size={16} />}
-              placeholder="Email"
-              id="email"
-              styles={{
-                input: { "&:focus": { borderColor: "#3b5bdb !important" }, "&:focus-within": { borderColor: "#3b5bdb !important" } }
-              }}
 
-            />
+            <Group direction="row" align="left" grow={true}>
+              <TextInput
+                icon={<Mail size={16} />}
+                placeholder="Email"
+                id="email"
+                styles={{
+                  input: { "&:focus": { borderColor: "#3b5bdb !important" }, "&:focus-within": { borderColor: "#3b5bdb !important" } }
+                }}
+
+              />
+              <NativeSelect
+                data={domains}
+                placeholder="Domain"
+                required
+              />
+
+
+
+
+
+            </Group>
+
+
+
+
+
             <Space h={16} />
             <PasswordInput
               placeholder="Password"
