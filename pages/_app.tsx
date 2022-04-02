@@ -21,7 +21,7 @@ export default function App(props: AppProps) {
           /** Put your mantine theme override here */
           colorScheme: 'dark',
           fontSizes: {
-            xxl: '50px'
+            xxl: '42px'
           }
 
         }}

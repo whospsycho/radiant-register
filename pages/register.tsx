@@ -1,7 +1,7 @@
 import { Text, Space, Center, Group, TextInput, PasswordInput, Button, Container, NativeSelect } from '@mantine/core'
 import { useModals } from '@mantine/modals';
 import { useNotifications } from '@mantine/notifications';
-import { X, Check, Mail, Key, User, Tag, At } from 'tabler-icons-react'
+import { X, Check, Mail, Key, User, Tag, At, UserPlus, BrandDiscord } from 'tabler-icons-react'
 import register from '../auth/register'
 
 
@@ -146,13 +146,49 @@ export default function registerPage() {
         <Center style={{ height: '100vh' }}>
           <Group direction="column" position="center">
             {/* @ts-ignore */}
-            <Text size="xxl" weight={700}>
+            <Text size="xxl" weight={650} color="blue">
               radiant.cool
             </Text>
 
-            <Button onClick={openRegisterModal} color="indigo" fullWidth>
-              Register
-            </Button>
+            <Group direction="row" align="center">
+              <Button onClick={openRegisterModal} color="blue">
+                <UserPlus size={24} style={{
+                  marginRight: "8px"
+                }} />
+                Register
+              </Button>
+
+              <Button color="blue" onClick={() => {
+                window.location.href = "https://mail.radiant.cool/mail"
+              }}>
+                <User size={24} style={{
+                  marginRight: "8px"
+                }} />
+                Login
+              </Button>
+
+              <Button color="blue" onClick={() => {
+                window.location.href = "https://discord.gg/BqzMaWN3xG"
+              }}>
+                <BrandDiscord size={24} style={{
+                  marginRight: "8px"
+                }} />
+                Discord
+              </Button>
+
+
+
+
+
+
+
+            </Group>
+
+            <Text size="md" color="gray">
+              the <s>worst</s> best email service on the market
+            </Text>
+
+
           </Group>
 
         </Center>
